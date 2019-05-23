@@ -17,7 +17,7 @@ class SinglePost extends Component {
 
     render(){
         return(
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-8 offset-md-2">
                 {this.mostrarPost(this.props)}
             </div>
         )
