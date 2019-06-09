@@ -8,6 +8,7 @@ import Navegacion from './Navegacion'
 import Posts from './Posts'
 import SinglePost from './SinglePost'
 import Formulario from './Formulario'
+import Editar from './Editar'
 
 class Router extends Component {
 
@@ -89,6 +90,19 @@ class Router extends Component {
                                 )
                                 return(
                                     <SinglePost
+                                        post={filtro[0]}
+                                    />
+                                )
+                            }}
+                        />
+                        <Route exact path="/editar/:postId" render={ (props) =>{
+                                let {postId} = props.match.params
+                                const {posts} = this.state
+                                let filtro = posts.filter(p =>
+                                    p.id === parseInt(postId)
+                                )
+                                return(
+                                    <Editar
                                         post={filtro[0]}
                                     />
                                 )
