@@ -10,6 +10,9 @@ import SinglePost from './SinglePost'
 import Formulario from './Formulario'
 import Editar from './Editar'
 
+// const apiUrl = 'https://jsonplaceholder.typicode.com/',
+const apiUrl = 'http://localhost:3011/';
+
 class Router extends Component {
 
     state = {
@@ -21,7 +24,7 @@ class Router extends Component {
     }
 
     obtenerPost = () => {
-        axios.get(`https://jsonplaceholder.typicode.com/posts`)
+        axios.get(`${apiUrl}posts`)
         .then(res => {
             this.setState({
                 posts: res.data
@@ -30,7 +33,7 @@ class Router extends Component {
     }
 
     crearPost = post => {
-        axios.post(`https://jsonplaceholder.typicode.com/posts`, {post})
+        axios.post(`${apiUrl}posts`, post)
             .then( res => {
                 if(res.status === 201){
                     let postId = {id: res.data.id}
@@ -49,8 +52,27 @@ class Router extends Component {
         )
     }
 
+    editarPost = (post, id) => {
+        axios.put(`${apiUrl}posts/${id}`, post)
+            .then( res => {
+                if(res.status === 200){
+                    let postId = {id: res.data.id}
+                    const nuevoPost = Object.assign({}, res.data.post, postId)
+                    this.setState(prevState => ({
+                        posts: [...prevState.posts, nuevoPost]
+                    }))
+                    Swal.fire(
+                        'Felicitaciones!',
+                        'Se Guardo el post correctamente!',
+                        'success'
+                    )
+                }
+            }
+        )
+    }
+
     borrarPost = (id) => {
-        axios.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        axios.delete(`${apiUrl}posts/${id}`)
             .then(res => {
                 if(res.status === 200){
                     const posts = [...this.state.posts]
@@ -104,6 +126,7 @@ class Router extends Component {
                                 return(
                                     <Editar
                                         post={filtro[0]}
+                                        editarPost={this.editarPost}
                                     />
                                 )
                             }}

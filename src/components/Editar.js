@@ -6,22 +6,22 @@ class Editar extends Component {
     tituloRef = React.createRef()
     entradaRef = React.createRef()
     
-    crearPost = e => {
+    editarPost = e => {
         e.preventDefault()
         // leer ref
-        const post = {
-            title: this.tituloRef.current.value,
-            body: this.entradaRef.current.value,
-            userId: 1    
-        }
+        let post = {...this.props.post}
+        post.title = this.tituloRef.current.value;
+        post.body = this.entradaRef.current.value;
         //enviar props o peticion
-        this.props.crearPost(post)
+        this.props.editarPost(post,this.props.post.id)
     }
     render(){
         if(!this.props.post) return null
+
+        console.log(this.props)
         const {title,body} = this.props.post
         return(
-            <form onSubmit={this.crearPost} className="col-8 offset-2">
+            <form onSubmit={this.editarPost} className="col-8 offset-2">
                 <legend className="text-center">
                     Editar Post
                 </legend>
