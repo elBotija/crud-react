@@ -56,16 +56,18 @@ class Router extends Component {
         axios.put(`${apiUrl}posts/${id}`, post)
             .then( res => {
                 if(res.status === 200){
-                    let postId = {id: res.data.id}
-                    const nuevoPost = Object.assign({}, res.data.post, postId)
-                    this.setState(prevState => ({
-                        posts: [...prevState.posts, nuevoPost]
-                    }))
-                    Swal.fire(
-                        'Felicitaciones!',
-                        'Se Guardo el post correctamente!',
-                        'success'
-                    )
+                    // let postId = {id: res.data.id}
+                    // const nuevoPost = Object.assign({}, res.data.post, postId)
+                    // this.setState(prevState => ({
+                    //     posts: [...prevState.posts, nuevoPost]
+                    // }))
+                    // Swal.fire(
+                    //     'Felicitaciones!',
+                    //     'Se Guardo el post correctamente!',
+                    //     'success'
+                    // )
+                    console.log("bleeeee")
+                    this.props.history.push('/')
                 }
             }
         )

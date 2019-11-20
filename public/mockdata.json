@@ -4,22 +4,26 @@
       "post": {
         "userId": 1,
         "id": 4,
+        "publish": true,
         "title": "ble ble ble",
         "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
       },
       "id": 4,
+      "publish": true,
       "title": "2ble",
       "body": "contenido"
     },
     {
       "userId": 1,
       "id": 4,
+      "publish": true,
       "title": "eum et est occaecati",
       "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
     },
     {
       "userId": 1,
       "id": 5,
+      "publish": true,
       "title": "nesciunt quas odio",
       "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
     },
@@ -27,6 +31,7 @@
       "title": "este es mi nuevo articulo",
       "body": "contenido por doquier",
       "userId": 1,
+      "publish": true,
       "id": 6
     }
   ]
