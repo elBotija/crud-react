@@ -8,11 +8,10 @@ class Listado extends Component  {
         if(posts.length === 0) return null
         return(
             <React.Fragment>
-                {posts.map(p => {
+                {posts.map((p,i) => {
                     return(<Post
-                        key={p.id}
+                        key={i}
                         info={p}
-                        borrarPost={this.props.borrarPost}
                     />)
                 })}
             </React.Fragment>

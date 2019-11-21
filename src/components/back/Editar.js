@@ -1,17 +1,19 @@
 import React, {Component} from 'react'
-
+import { obtenerPost, editarPost } from '../../actions/AdminNotes'
 
 class Editar extends Component {
     state = {
         isChecked: false,
+        post: {}
     };
-        
+
     handleChange = this.handleChange.bind(this);
-    
     componentDidMount(){
-        if(this.props.post){
-            this.setState({isChecked: this.props.post.publish})
-        }
+        console.log("eeee",this.props)
+        obtenerPost(this.props.match.params.postId).then(data => {
+            let post = data.data
+            this.setState({post, isChecked: post.publish})
+        });
     }
 
     handleChange() {
@@ -30,14 +32,13 @@ class Editar extends Component {
         post.body = this.entradaRef.current.value;
         post.publish = this.state.isChecked;
         //enviar props o peticion
-        this.props.editarPost(post,this.props.post.id)
+        editarPost(post, this.state.post.id)
     }
 
     render(){
-        if(!this.props.post) return null
+        if(!this.state.post) return null
 
-        console.log(this.props)
-        const {title,body} = this.props.post
+        const {title,body} = this.state.post
         let showNoteState = 'No publicada'
         if(this.state.isChecked){
             showNoteState = 'Nota publicada'

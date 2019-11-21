@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import { borrarPost } from '../../actions/AdminNotes'
 
 class Post extends Component {
 
@@ -16,7 +17,7 @@ class Post extends Component {
             cancelButtonText: 'Cancelar!'
           }).then((result) => {
             if (result.value) {
-                this.props.borrarPost(this.props.info.id)
+                borrarPost(this.props.info.id)
               Swal.fire(
                 'Eliminado!',
                 'El post fue eliminado correctamente.',

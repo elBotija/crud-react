@@ -1,21 +1,14 @@
 {
   "posts": [
     {
-      "post": {
-        "userId": 1,
-        "id": 4,
-        "publish": true,
-        "title": "ble ble ble",
-        "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-      },
-      "id": 4,
+      "title": "2ble ssss",
+      "body": "contenido",
       "publish": true,
-      "title": "2ble",
-      "body": "contenido"
+      "id": 4
     },
     {
       "userId": 1,
-      "id": 4,
+      "id": 7,
       "publish": true,
       "title": "eum et est occaecati",
       "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
@@ -33,6 +26,12 @@
       "userId": 1,
       "publish": true,
       "id": 6
+    },
+    {
+      "title": "esta es la nota 2",
+      "body": "eaaa",
+      "publish": true,
+      "id": 8
     }
   ]
 }

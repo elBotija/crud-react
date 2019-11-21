@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { crearPost } from '../../actions/AdminNotes'
 
 class Formulario extends Component {
     // crear ref
@@ -12,10 +12,11 @@ class Formulario extends Component {
         const post = {
             title: this.tituloRef.current.value,
             body: this.entradaRef.current.value,
-            userId: 1    
+            userId: 1,
+            publish: false,    
         }
         //enviar props o peticion
-        this.props.crearPost(post)
+        crearPost(post)
     }
     render(){
         return(
