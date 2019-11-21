@@ -3,9 +3,9 @@ import React from 'react';
 
 const Note = props => {
   const post = props.post;
-  const imagen = (post.urlToImage) ?
+  const imagen = 'https://via.placeholder.com/350x250' ?
       <div className="card-image">
-        <img src={post.urlToImage} alt={post.title} />
+        <img src='https://via.placeholder.com/350x250' alt={post.title} />
       </div>
   :   ''
   
